@@ -23,19 +23,23 @@ function LanguageSwitcher({ dark }: { dark?: boolean }) {
     setOpen(false);
   };
 
-  const borderCol = dark ? "rgba(255,255,255,0.2)" : "var(--charcoal-200)";
-  const textCol = dark ? "rgba(200,200,184,0.9)" : "var(--charcoal-700)";
-
   return (
     <div className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors duration-200 cursor-pointer"
-        style={{ borderColor: borderCol, color: textCol }}
+        className="flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-bold tracking-wider border transition-all duration-200 cursor-pointer"
+        style={{
+          borderColor: "rgba(255,255,255,0.25)",
+          color: "var(--cream-100)",
+          backgroundColor: "rgba(255,255,255,0.08)",
+          letterSpacing: "0.06em",
+        }}
+        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.15)")}
+        onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.08)")}
         aria-label="Switch language"
         aria-expanded={open}
       >
-        <Globe size={12} />
+        <Globe size={13} />
         {t(currentLocale as "ro" | "ru" | "en")}
       </button>
       <AnimatePresence>

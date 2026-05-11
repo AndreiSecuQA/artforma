@@ -22,7 +22,11 @@
     "stat3_label": "Personalizat",
     "discover": "Descoperă",
     "badge": "Design 3D Gratuit",
-    "marquee": "Bucătării · Dulapuri · Dormitoare · Living · Design 3D · Montaj · Personalizat · Premium ·"
+    "marquee": "Bucătării · Dulapuri · Dormitoare · Living · Design 3D · Montaj · Personalizat · Premium ·",
+    "card1_label": "Bucătărie Modernă",
+    "card2_label": "Dormitor Elegant",
+    "card3_label": "Dressing Premium",
+    "social_proof": "500+ clienți mulțumiți"
   },
   "services": {
     "eyebrow": "Serviciile noastre",

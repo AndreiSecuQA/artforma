@@ -22,7 +22,11 @@
     "stat3_label": "Customized",
     "discover": "Discover",
     "badge": "Free 3D Design",
-    "marquee": "Kitchens · Wardrobes · Bedrooms · Living Rooms · 3D Design · Installation · Custom-made · Premium ·"
+    "marquee": "Kitchens · Wardrobes · Bedrooms · Living Rooms · 3D Design · Installation · Custom-made · Premium ·",
+    "card1_label": "Modern Kitchen",
+    "card2_label": "Elegant Bedroom",
+    "card3_label": "Premium Wardrobe",
+    "social_proof": "500+ happy clients"
   },
   "services": {
     "eyebrow": "Our services",

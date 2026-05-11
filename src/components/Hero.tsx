@@ -27,11 +27,11 @@ function Marquee({ text }: { text: string }) {
   );
 }
 
-const imageSlots = [
-  { label: "Bucătărie Modernă", color: "#2e2e28", accent: "#45453e", gridArea: "1 / 1 / 3 / 2" },
-  { label: "Dormitor Elegant",  color: "#4a2e22", accent: "#6b4436", gridArea: "1 / 2 / 2 / 3" },
-  { label: "Dressing Premium",  color: "#1e1e1a", accent: "#2e2e28", gridArea: "2 / 2 / 3 / 3" },
-];
+const imageSlotDefs = [
+  { colorKey: "card1_label", color: "#2e2e28", accent: "#45453e", gridArea: "1 / 1 / 3 / 2" },
+  { colorKey: "card2_label", color: "#4a2e22", accent: "#6b4436", gridArea: "1 / 2 / 2 / 3" },
+  { colorKey: "card3_label", color: "#1e1e1a", accent: "#2e2e28", gridArea: "2 / 2 / 3 / 3" },
+] as const;
 
 export default function Hero() {
   const t = useTranslations("hero");
@@ -111,7 +111,7 @@ export default function Hero() {
             animate="show"
           >
             {/* Top group */}
-            <div className="flex-1">
+            <div className="mb-10 lg:mb-12">
               <motion.div variants={item} className="flex flex-wrap items-center gap-3 mb-8">
                 <span
                   className="text-xs font-medium tracking-[0.25em] uppercase"
@@ -193,8 +193,8 @@ export default function Hero() {
               </motion.div>
             </div>
 
-            {/* Stats — pinned to bottom */}
-            <motion.div variants={item} className="flex items-center gap-10 pt-10 mt-auto border-t" style={{ borderColor: "rgba(13,13,11,0.08)" }}>
+            {/* Stats */}
+            <motion.div variants={item} className="flex items-center gap-10 pt-10 border-t" style={{ borderColor: "rgba(13,13,11,0.08)" }}>
               {[
                 { value: t("stat1_value"), label: t("stat1_label") },
                 { value: t("stat2_value"), label: t("stat2_label") },
@@ -227,7 +227,7 @@ export default function Hero() {
               className="flex-1 grid gap-3"
               style={{ gridTemplateColumns: "1fr 1fr", gridTemplateRows: "1fr 1fr", minHeight: "380px" }}
             >
-              {imageSlots.map((slot, i) => (
+              {imageSlotDefs.map((slot, i) => (
                 <motion.div
                   key={i}
                   className="relative overflow-hidden rounded-2xl"
@@ -246,7 +246,7 @@ export default function Hero() {
                     style={{ background: "linear-gradient(to top, rgba(0,0,0,0.6), transparent)" }}
                   >
                     <span className="text-xs font-medium tracking-wide" style={{ color: "rgba(250,248,245,0.85)" }}>
-                      {slot.label}
+                      {t(slot.colorKey)}
                     </span>
                   </div>
                   <motion.div
@@ -280,7 +280,7 @@ export default function Hero() {
               </div>
               <div className="text-right">
                 <p className="text-sm font-semibold" style={{ color: "var(--wood-600)" }}>★★★★★</p>
-                <p className="text-[11px]" style={{ color: "var(--charcoal-500)" }}>500+ clienți mulțumiți</p>
+                <p className="text-[11px]" style={{ color: "var(--charcoal-400)" }}>{t("social_proof")}</p>
               </div>
             </motion.div>
           </motion.div>
