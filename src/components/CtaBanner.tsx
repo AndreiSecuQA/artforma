@@ -12,7 +12,7 @@ export default function CtaBanner() {
 
   return (
     <section
-      className="py-0"
+      className="py-16 lg:py-24"
       style={{ backgroundColor: "var(--cream-100)" }}
     >
       <motion.div
